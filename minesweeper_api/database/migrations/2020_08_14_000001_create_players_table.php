@@ -13,8 +13,8 @@ class CreatePlayersTable extends Migration
      */
     public function up(){
         Schema::create('players', function (Blueprint $table) {
-            $table->id('playerId');
-            $table->string('playerName')->unique();
+            $table->id();
+            $table->string('player_name')->unique();
             $table->timestamps();
         });
     }

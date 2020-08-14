@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SavedGames extends Model
+class ScoresGames extends Model
 {
     protected $fillable=[
-        'saved_game_state',
-        'saved_game_time',
+        'score_game_time',
+        'score_game_comment',
         'level_id',
         'player_id'
     ];

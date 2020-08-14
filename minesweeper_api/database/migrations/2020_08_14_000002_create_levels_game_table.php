@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSavedGamesTable extends Migration
+class CreateLevelsGameTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateSavedGamesTable extends Migration
      */
     public function up()
     {
-        Schema::create('saved_games', function (Blueprint $table) 
-        {
+        Schema::create('levels_game', function (Blueprint $table) {
             $table->id();
-            $table->json('saved_game_state');
-            $table->float('saved_game_time');
-            $table->foreignId('level_game_id')->constrained('levels_game');
-            $table->foreignId('player_id')->constrained();
+            $table->string('level_game_name');
+            $table->integer('level_game_columls');
+            $table->integer('level_game_rows');
+            $table->integer('level_game_mines');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateSavedGamesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('saved_games');
+        Schema::dropIfExists('levels_game');
     }
 }
