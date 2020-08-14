@@ -4,7 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Player extends Model
-{
-    //
+class Player extends Model{
+    protected $fillable=[
+        'playerName'
+    ];
 }

@@ -11,10 +11,10 @@ class CreatePlayersTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up(){
         Schema::create('players', function (Blueprint $table) {
-            $table->id();
+            $table->id('playerId');
+            $table->string('playerName')->unique();
             $table->timestamps();
         });
     }
