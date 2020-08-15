@@ -9,7 +9,7 @@ class SavedGames extends Model
     protected $fillable=[
         'saved_game_state',
         'saved_game_time',
-        'level_id',
+        'level_game_id',
         'player_id'
     ];
 }
