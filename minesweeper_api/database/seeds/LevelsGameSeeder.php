@@ -12,27 +12,27 @@ class LevelsGameSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('levels_game')->insert([
-            'level_game_name' => 'Beginner',
-            'level_game_columls' => 9,
-            'level_game_rows' => 9,
-            'level_game_mines' => 10,
+        DB::table('game_levels')->insert([
+            'game_level_name' => 'Beginner',
+            'game_level_colums' => 9,
+            'game_level_rows' => 9,
+            'game_level_mines' => 10,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
-        DB::table('levels_game')->insert([
-            'level_game_name' => 'Intermediate',
-            'level_game_columls' => 16,
-            'level_game_rows' => 16,
-            'level_game_mines' => 40,
+        DB::table('game_levels')->insert([
+            'game_level_name' => 'Intermediate',
+            'game_level_colums' => 16,
+            'game_level_rows' => 16,
+            'game_level_mines' => 40,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
-        DB::table('levels_game')->insert([
-            'level_game_name' => 'Expert',
-            'level_game_columls' => 16,
-            'level_game_rows' => 30,
-            'level_game_mines' => 99,
+        DB::table('game_levels')->insert([
+            'game_level_name' => 'Expert',
+            'game_level_colums' => 16,
+            'game_level_rows' => 30,
+            'game_level_mines' => 99,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);

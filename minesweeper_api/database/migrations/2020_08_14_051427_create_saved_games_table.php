@@ -18,7 +18,7 @@ class CreateSavedGamesTable extends Migration
             $table->id();
             $table->json('saved_game_state');
             $table->float('saved_game_time');
-            $table->foreignId('level_game_id')->constrained('levels_game');
+            $table->foreignId('game_level_id')->constrained();
             $table->foreignId('player_id')->constrained();
             $table->timestamps();
         });

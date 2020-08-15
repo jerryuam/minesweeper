@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::resource('players','PlayerController');//Route for player operations
 Route::resource('scores','ScoreGameController');//Route for scoregame operations
 Route::resource('savedgames','SavedGameController');//Route for savedgame operations
+Route::resource('levelsgame','LevelGameController');//Route for levelgame operations
+Route::get('newgame','GameController@newGame');//Route for creating a new game
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

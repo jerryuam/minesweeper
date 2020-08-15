@@ -9,7 +9,7 @@ class ScoresGames extends Model
     protected $fillable=[
         'score_game_time',
         'score_game_comment',
-        'level_game_id',
+        'game_level_id',
         'player_id'
     ];
 }

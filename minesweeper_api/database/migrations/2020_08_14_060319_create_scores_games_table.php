@@ -17,7 +17,7 @@ class CreateScoresGamesTable extends Migration
             $table->id();
             $table->float('score_game_time');
             $table->string('score_game_comment');
-            $table->foreignId('level_game_id')->constrained('levels_game');
+            $table->foreignId('game_level_id')->constrained();
             $table->foreignId('player_id')->constrained();
             $table->timestamps();
         });
