@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Players;
+use App\ScoresGames;
 
-class PlayerController extends Controller
+class ScoreGameController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        return Players::all();
+        return ScoresGames::all();
     }
 
     /**
@@ -25,7 +25,7 @@ class PlayerController extends Controller
      */
     public function store(Request $request)
     {
-        return Players::create($request->all());
+        return ScoresGames::create($request->all());
     }
 
     /**
@@ -36,7 +36,7 @@ class PlayerController extends Controller
      */
     public function show($id)
     {
-        return Players::find($id);
+        return ScoresGames::find($id);
     }
 
     /**
@@ -48,9 +48,9 @@ class PlayerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $player=Players::find($id);
-        $player->update($request->all());
-        return $player;
+        $scoreGame=ScoresGames::find($id);
+        $scoreGame->update($request->all());
+        return $scoreGame;
     }
 
     /**
@@ -61,6 +61,6 @@ class PlayerController extends Controller
      */
     public function destroy($id)
     {
-        return Players::destroy($id);
+        return ScoresGames::destroy($id);
     }
 }
