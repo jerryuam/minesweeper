@@ -52,6 +52,78 @@ class GameController extends Controller
             $minesweeperBoard[]=$row;//Each row is filled with colums data
         }
 
+        for($xCoordinate=0;$xCoordinate<$gameLevelData->game_level_colums;$xCoordinate++){//Go over x coordinantes
+            for($yCoordinate=0;$yCoordinate<$gameLevelData->game_level_rows;$yCoordinate++){//Go over y coordinates
+                // $xCoordinate=0;
+                // $yCoordinate=0;
+                if($minesweeperBoard[$xCoordinate][$yCoordinate][0]!="M"){
+                    $minesCounter=0;
+                    //x and y-1 case
+                    if($yCoordinate>0){
+                        if($minesweeperBoard[$xCoordinate][$yCoordinate-1][0]=="M"){
+                            $minesCounter++;
+                        } 
+                    }
+                    //x+1 and y case
+                    if($xCoordinate<8){
+                        if($minesweeperBoard[$xCoordinate+1][$yCoordinate][0]=="M"){
+                            $minesCounter++;
+                        } 
+                    }
+                    //x and y+1 case
+                    if($yCoordinate<8){
+                        if($minesweeperBoard[$xCoordinate][$yCoordinate+1][0]=="M"){
+                            $minesCounter++;
+                        } 
+                    }
+                    //x-1 and y case
+                    if($xCoordinate>0){
+                        if($minesweeperBoard[$xCoordinate-1][$yCoordinate][0]=="M"){
+                            $minesCounter++;
+                        } 
+                    }
+    
+                    //x-1 and y-1 case
+                    if($xCoordinate>0&&$yCoordinate>0){
+                        if($minesweeperBoard[$xCoordinate-1][$yCoordinate-1][0]=="M"){
+                            $minesCounter++;
+                        } 
+                    }
+                    //x+1 and y-1 case
+                    if($xCoordinate<8&&$yCoordinate>0){
+                        if($minesweeperBoard[$xCoordinate+1][$yCoordinate-1][0]=="M"){
+                            $minesCounter++;
+                        } 
+                    }
+                    //x+1 and y+1 case
+                    if($xCoordinate<8&&$yCoordinate<8){
+                        if($minesweeperBoard[$xCoordinate+1][$yCoordinate+1][0]=="M"){
+                            $minesCounter++;
+                        } 
+                    }
+                    //x-1 and y+1 case
+                    if($xCoordinate>0&&$yCoordinate<8){
+                        if($minesweeperBoard[$xCoordinate-1][$yCoordinate+1][0]=="M"){
+                            $minesCounter++;
+                        } 
+                    }
+                    $minesweeperBoard[$xCoordinate][$yCoordinate]=[$minesCounter];
+                }
+            }
+        }
+        
+        // foreach ($minesweeperBoard as $key => $minesweeperBoardRow) {
+        //     foreach ($minesweeperBoardRow as $key => $cell) {
+        //         // print_r($cell);
+        //         if($cell[0][0]=="M"){
+        //             print_r("-M-|");
+        //         } else {
+        //             print_r($cell[0].",".$cell[1]."|");
+        //         }
+        //     }
+        //     print_r("\n");
+        // }
+
         return $minesweeperBoard;
     }
     
